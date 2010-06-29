@@ -9,76 +9,80 @@ MyTweetMag - Create Collaborative Newsstreams with Twitter and Integrate them in
 
 == Description ==
 
-This plugin works in combination with the plattform www.mytweetmag.com and allows you, to integrate rss-feeds from mytweetmag.
+This plugin works in combination with the plattform www.mytweetmag.com and allows you to integrate rss-feeds from mytweetmag into your wordpress-blog.
 
 There are two ways to integrate the feeds:
 1. with a widget on the sidebar
-2. with a shortcode in a static page
-3. with php
+1. with a shortcode in a static page
+1. with php
 
- 
- * PHP-USAGE: Use following code in Templates of the Theme
- * Example: <?php MyTweetMag(10, "myusername"); ?>
+ ---------------------------------------------------------------------------------------- 
+ PHP-USAGE: Use following code in Templates of the Theme
+ Example: &lt;?php MyTweetMag(10, &quot;myusername&quot;); ?&gt;
+ ----------------------------------------------------------------------------------------
  
  All params with default-values:
 
- * $display = 5,
- * $username = '',
- * $before_desc = '<br/>', $displaydescriptions = 0, $after_desc = '',
- * $html = 1,
- * $truncatedescchar = 200, $truncatedescstring = ' ... ', $truncatetitlechar = '', $truncatetitlestring = ' ... ',
- * $before_date = '<br/><small>', $date = 0, $after_date = '</small>', $date_format = '',
- * $before_creator = '<br/><small>', $creator = 0, $after_creator = '</small>',
- * $start_items = '<ul class="mtm">', $end_items = '</ul>',
- * $start_item = '<li>', $end_item = '</li>',
- * $target = 'self',
- * $rel = 'follow',
- * $charsetscan = 0,
- * $debug = 0,
- * $before_noitems = '<p>', $noitems = 'No items, feed is empty.', $after_noitems = '</p>',
- * $before_error = '<p>', $error = 'Error: Feed has a error or is not valid', $after_error = '</p>',
- * $paging = 0, $prev_paging_link = '&laquo; Previous', $next_paging_link = 'Next &raquo;', $prev_paging_title = 'more items', $next_paging_title = 'more items',
- * $use_simplepie = 1,
- * $view = 1
-  
-* SHORTCODE-USAGE: use the following code in post or pages
-* Example: [MyTweetMag display="5" username="" target="self"]
+ $display = 5,
+ $username = '',
+ $before_desc = '&lt;br/&gt;', $displaydescriptions = 0, $after_desc = '',
+ $html = 1,
+ $truncatedescchar = 200, $truncatedescstring = ' ... ', $truncatetitlechar = '', $truncatetitlestring = ' ... ',
+ $before_date = '&lt;br/&gt;&lt;small&gt;', $date = 0, $after_date = '&lt;/small&gt;', $date_format = '',
+ $before_creator = '&lt;br/&gt;&lt;small&gt;', $creator = 0, $after_creator = '&lt;/small&gt;',
+ $start_items = '&lt;ul class=&quot;mtm&quot;&gt;', $end_items = '&lt;/ul&gt;',
+ $start_item = '&lt;li&gt;', $end_item = '&lt;/li&gt;',
+ $target = 'self',
+ $rel = 'follow',
+ $charsetscan = 0,
+ $debug = 0,
+ $before_noitems = '&lt;p&gt;', $noitems = 'No items, feed is empty.', $after_noitems = '&lt;/p&gt;',
+ $before_error = '&lt;p&gt;', $error = 'Error: Feed has a error or is not valid', $after_error = '&lt;/p&gt;',
+ $paging = 0, $prev_paging_link = '&amp;laquo; Previous', $next_paging_link = 'Next &amp;raquo;', $prev_paging_title = 'more items', $next_paging_title = 'more items',
+ $use_simplepie = 1,
+ $view = 1
+
+-------------------------------------------------------------------------------------------  
+SHORTCODE-USAGE: use the following code in post or pages
+Example: [MyTweetMag display=&quot;5&quot; username=&quot;&quot; target=&quot;self&quot;]
+-------------------------------------------------------------------------------------------
 
 All params with default-values:
-* 'display' => 5,
-* 'username' => '',
-* 'before_desc' => '<br/>',
-* 'displaydescriptions' => 1,
-* 'after_desc' => '',
-* 'html' => 1,
-* 'truncatedescchar' => '',
-* 'truncatedescstring' => ' ... ',
-* 'truncatetitlechar' => '',
-* 'truncatetitlestring' => ' ... ',
-* 'before_meta' => '<br/><small>',
-* 'meta' => 0,
-* 'after_meta' => '</small>',
-* 'start_items' => '<ul class="mtm">',
-* 'end_items' => '</ul>',
-* 'start_item' => '<li>',
-* 'end_item' => '</li>',
-* 'target' => 'self',
-* 'rel' => 'follow',
-* 'charsetscan' => 0,
-* 'debug' => 0,
-* 'before_noitems' => '<p>',
-* 'noitems' => __('No items, feed is empty.', FB_MTM_TEXTDOMAIN),
-* 'after_noitems' => '</p>',
-* 'before_error' => '<p>',
-* 'error' => __('Error: Feed has a error or is not valid', FB_MTM_TEXTDOMAIN),
-* 'after_error' => '</p>',
-* 'paging' => 0,
-* 'prev_paging_link' => __('&laquo; Previous', FB_MTM_TEXTDOMAIN),
-* 'next_paging_link' => __('Next &raquo;', FB_MTM_TEXTDOMAIN),
-* 'prev_paging_title' => __('more items', FB_MTM_TEXTDOMAIN),
-* 'next_paging_title' => __('more items', FB_MTM_TEXTDOMAIN),
-* 'use_simplepie' => 1,
-* 'view' => 0
+
+'display' =&gt; 5,
+'username' =&gt; '',
+'before_desc' =&gt; '&lt;br/&gt;',
+'displaydescriptions' =&gt; 1,
+'after_desc' =&gt; '',
+'html' =&gt; 1,
+'truncatedescchar' =&gt; '',
+'truncatedescstring' =&gt; ' ... ',
+'truncatetitlechar' =&gt; '',
+'truncatetitlestring' =&gt; ' ... ',
+'before_meta' =&gt; '&lt;br/&gt;&lt;small&gt;',
+'meta' =&gt; 0,
+'after_meta' =&gt; '&lt;/small&gt;',
+'start_items' =&gt; '&lt;ul class=&quot;mtm&quot;&gt;',
+'end_items' =&gt; '&lt;/ul&gt;',
+'start_item' =&gt; '&lt;li&gt;',
+'end_item' =&gt; '&lt;/li&gt;',
+'target' =&gt; 'self',
+'rel' =&gt; 'follow',
+'charsetscan' =&gt; 0,
+'debug' =&gt; 0,
+'before_noitems' =&gt; '&lt;p&gt;',
+'noitems' =&gt; __('No items, feed is empty.', FB_MTM_TEXTDOMAIN),
+'after_noitems' =&gt; '&lt;/p&gt;',
+'before_error' =&gt; '&lt;p&gt;',
+'error' =&gt; __('Error: Feed has a error or is not valid', FB_MTM_TEXTDOMAIN),
+'after_error' =&gt; '&lt;/p&gt;',
+'paging' =&gt; 0,
+'prev_paging_link' =&gt; __('&amp;laquo; Previous', FB_MTM_TEXTDOMAIN),
+'next_paging_link' =&gt; __('Next &amp;raquo;', FB_MTM_TEXTDOMAIN),
+'prev_paging_title' =&gt; __('more items', FB_MTM_TEXTDOMAIN),
+'next_paging_title' =&gt; __('more items', FB_MTM_TEXTDOMAIN),
+'use_simplepie' =&gt; 1,
+'view' =&gt; 0
  
 == Installation ==
 
@@ -93,7 +97,7 @@ All params with default-values:
 
 To integrate a rss-stream of MyTweetMag please add the TWITTER-NAME of the magazine-editor as username. If you don't know the twitter-name of the editor, take the last part of the MyTweetMag-URL, e.g. "mytweetmag" of the URL http://www.mytweetmag.com/mytweetmag . 
 
-= Can I integrate a rss-feed outside of www.mytweetmag.com? =
+= Can I integrate a rss-feed which is not from mytweetmag? =
 
 No. The MyTweetMag-Plugin is especially designed for the MyTweetMag-plattform. If you want to integrate other rss-feeds, please use the plugin RSS-Import by Frank Bueltge.
 
