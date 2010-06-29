@@ -11,80 +11,134 @@ MyTweetMag - Create Collaborative Newsstreams with Twitter and Integrate them in
 
 This plugin works in combination with the plattform www.mytweetmag.com and allows you to integrate rss-feeds from mytweetmag into your wordpress-blog.
 
-There are two ways to integrate the feeds:<br/>
-1. with a widget on the sidebar<br/>
-2. with a shortcode in a static page<br/>
-3. with php<br/>
+There are two ways to integrate the feeds:
 
- ---------------------------------------------------------------------------------------- 
- PHP-USAGE: <br/>
-Use following code in Templates of the Theme<br/>
- Example: &lt;?php MyTweetMag(10, &quot;myusername&quot;); ?&gt;<br/>
- ----------------------------------------------------------------------------------------
+1. with a widget on the sidebar
+
+2. with a shortcode in a static page
+
+3. with php
+
+ 
+PHP-USAGE:
+
+Use following code in Templates of the Theme
+
+Example: &lt;?php MyTweetMag(10, &quot;myusername&quot;); ?&gt;
  
  All params with default-values:
 
- $display = 5,<br>
- $username = '',<br>
- $before_desc = '&lt;br/&gt;', $displaydescriptions = 0, $after_desc = '',<br>
- $html = 1,<br/>
- $truncatedescchar = 200, $truncatedescstring = ' ... ', $truncatetitlechar = '', $truncatetitlestring = ' ... ',<br/>
- $before_date = '&lt;br/&gt;&lt;small&gt;', $date = 0, $after_date = '&lt;/small&gt;', $date_format = '',<br/>
- $before_creator = '&lt;br/&gt;&lt;small&gt;', $creator = 0, $after_creator = '&lt;/small&gt;',<br/>
- $start_items = '&lt;ul class=&quot;mtm&quot;&gt;', $end_items = '&lt;/ul&gt;',<br/>
- $start_item = '&lt;li&gt;', $end_item = '&lt;/li&gt;',<br/>
- $target = 'self',<br/>
- $rel = 'follow',<br/>
- $charsetscan = 0,<br/>
- $debug = 0,<br/>
- $before_noitems = '&lt;p&gt;', $noitems = 'No items, feed is empty.', $after_noitems = '&lt;/p&gt;',<br/>
- $before_error = '&lt;p&gt;', $error = 'Error: Feed has a error or is not valid', $after_error = '&lt;/p&gt;',<br/>
- $paging = 0, $prev_paging_link = '&amp;laquo; Previous', $next_paging_link = 'Next &amp;raquo;', $prev_paging_title = 'more items', $next_paging_title = 'more items',<br/>
- $use_simplepie = 1,<br/>
- $view = 1<br/>
+ $display = 5,
 
--------------------------------------------------------------------------------------------  
-SHORTCODE-USAGE: <br/>
-use the following code in post or pages<br/>
-Example: [MyTweetMag display=&quot;5&quot; username=&quot;&quot; target=&quot;self&quot;]<br/>
--------------------------------------------------------------------------------------------
+ $username = '',
+
+ $before_desc = '&lt;br/&gt;', $displaydescriptions = 0, $after_desc = '',
+
+ $html = 1,
+
+ $truncatedescchar = 200, $truncatedescstring = ' ... ', $truncatetitlechar = '', $truncatetitlestring = ' ... ',
+
+ $before_date = '&lt;br/&gt;&lt;small&gt;', $date = 0, $after_date = '&lt;/small&gt;', $date_format = '',
+
+ $before_creator = '&lt;br/&gt;&lt;small&gt;', $creator = 0, $after_creator = '&lt;/small&gt;',
+
+ $start_items = '&lt;ul class=&quot;mtm&quot;&gt;', $end_items = '&lt;/ul&gt;',
+
+ $start_item = '&lt;li&gt;', $end_item = '&lt;/li&gt;',
+
+ $target = 'self',
+
+ $rel = 'follow',
+
+ $charsetscan = 0,
+
+ $debug = 0,
+
+ $before_noitems = '&lt;p&gt;', $noitems = 'No items, feed is empty.', $after_noitems = '&lt;/p&gt;',
+
+ $before_error = '&lt;p&gt;', $error = 'Error: Feed has a error or is not valid', $after_error = '&lt;/p&gt;',
+
+ $paging = 0, $prev_paging_link = '&amp;laquo; Previous', $next_paging_link = 'Next &amp;raquo;', $prev_paging_title = 'more items', $next_paging_title = 'more items',
+
+ $use_simplepie = 1,
+
+ $view = 1
+
+SHORTCODE-USAGE: 
+
+use the following code in post or pages
+
+Example: [MyTweetMag display=&quot;5&quot; username=&quot;&quot; target=&quot;self&quot;]
 
 All params with default-values:
 
-'display' =&gt; 5,<br/>
-'username' =&gt; '',<br/>
-'before_desc' =&gt; '&lt;br/&gt;',<br/>
-'displaydescriptions' =&gt; 1,<br/>
-'after_desc' =&gt; '',<br/>
-'html' =&gt; 1,<br/>
-'truncatedescchar' =&gt; '',<br/>
-'truncatedescstring' =&gt; ' ... ',<br/>
-'truncatetitlechar' =&gt; '',<br/>
-'truncatetitlestring' =&gt; ' ... ',<br/>
-'before_meta' =&gt; '&lt;br/&gt;&lt;small&gt;',<br/>
-'meta' =&gt; 0,<br/>
-'after_meta' =&gt; '&lt;/small&gt;',<br/>
-'start_items' =&gt; '&lt;ul class=&quot;mtm&quot;&gt;',<br/>
-'end_items' =&gt; '&lt;/ul&gt;',<br/>
-'start_item' =&gt; '&lt;li&gt;',<br/>
-'end_item' =&gt; '&lt;/li&gt;',<br/>
-'target' =&gt; 'self',<br/>
-'rel' =&gt; 'follow',<br/>
-'charsetscan' =&gt; 0,<br/>
-'debug' =&gt; 0,<br/>
-'before_noitems' =&gt; '&lt;p&gt;',<br/>
-'noitems' =&gt; __('No items, feed is empty.', FB_MTM_TEXTDOMAIN),<br/>
-'after_noitems' =&gt; '&lt;/p&gt;',<br/>
-'before_error' =&gt; '&lt;p&gt;',<br/>
-'error' =&gt; __('Error: Feed has a error or is not valid', FB_MTM_TEXTDOMAIN),<br/>
-'after_error' =&gt; '&lt;/p&gt;',<br/>
-'paging' =&gt; 0,<br/>
-'prev_paging_link' =&gt; __('&amp;laquo; Previous', FB_MTM_TEXTDOMAIN),<br/>
-'next_paging_link' =&gt; __('Next &amp;raquo;', FB_MTM_TEXTDOMAIN),<br/>
-'prev_paging_title' =&gt; __('more items', FB_MTM_TEXTDOMAIN),<br/>
-'next_paging_title' =&gt; __('more items', FB_MTM_TEXTDOMAIN),<br/>
-'use_simplepie' =&gt; 1,<br/>
-'view' =&gt; 0<br/>
+'display' =&gt; 5,
+
+'username' =&gt; '',
+
+'before_desc' =&gt; '&lt;br/&gt;',
+
+'displaydescriptions' =&gt; 1,
+
+'after_desc' =&gt; '',
+
+'html' =&gt; 1,
+
+'truncatedescchar' =&gt; '',
+
+'truncatedescstring' =&gt; ' ... ',
+
+'truncatetitlechar' =&gt; '',
+
+'truncatetitlestring' =&gt; ' ... ',
+
+'before_meta' =&gt; '&lt;br/&gt;&lt;small&gt;',
+
+'meta' =&gt; 0,
+
+'after_meta' =&gt; '&lt;/small&gt;',
+
+'start_items' =&gt; '&lt;ul class=&quot;mtm&quot;&gt;',
+
+'end_items' =&gt; '&lt;/ul&gt;',
+
+'start_item' =&gt; '&lt;li&gt;',
+
+'end_item' =&gt; '&lt;/li&gt;',
+
+'target' =&gt; 'self',
+
+'rel' =&gt; 'follow',
+
+'charsetscan' =&gt; 0,
+
+'debug' =&gt; 0,
+
+'before_noitems' =&gt; '&lt;p&gt;',
+
+'noitems' =&gt; __('No items, feed is empty.', FB_MTM_TEXTDOMAIN),
+
+'after_noitems' =&gt; '&lt;/p&gt;',
+
+'before_error' =&gt; '&lt;p&gt;',
+
+'error' =&gt; __('Error: Feed has a error or is not valid', FB_MTM_TEXTDOMAIN),
+
+'after_error' =&gt; '&lt;/p&gt;',
+
+'paging' =&gt; 0,
+
+'prev_paging_link' =&gt; __('&amp;laquo; Previous', FB_MTM_TEXTDOMAIN),
+
+'next_paging_link' =&gt; __('Next &amp;raquo;', FB_MTM_TEXTDOMAIN),
+
+'prev_paging_title' =&gt; __('more items', FB_MTM_TEXTDOMAIN),
+
+'next_paging_title' =&gt; __('more items', FB_MTM_TEXTDOMAIN),
+
+'use_simplepie' =&gt; 1,
+
+'view' =&gt; 0
  
 == Installation ==
 
