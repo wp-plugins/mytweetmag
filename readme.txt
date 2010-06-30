@@ -19,42 +19,43 @@ There are two ways to integrate the feeds:
 PHP-USAGE:
 
 Use following code in Templates of the Theme
-_Example_: `&lt;?php MyTweetMag(10, &quot;myusername&quot;); ?&gt;`
+
+_Example_: `<?php MyTweetMag(10, "mytweetmag"); ?>`
 
 All params with default-values:
 
 1. `$display = 5`
 1. `$username = ''`
-1. `$before_desc = '&lt;br/&gt;', $displaydescriptions = 0, $after_desc = ''`
+1. `$before_desc = '<br/>', $displaydescriptions = 0, $after_desc = ''`
 1. `$html = 1`
 1. `$truncatedescchar = 200`
 1. `$truncatedescstring = ' ... '` 
 1. `$truncatetitlechar = ''` 
 1. `$truncatetitlestring = ' ... '`
-1. `$before_date = '&lt;br/&gt;&lt;small&gt;'` 
+1. `$before_date = '<br/><small>'` 
 1. `$date = 0`
-1. `$after_date = '&lt;/small&gt;'`
+1. `$after_date = '</small>'`
 1. `$date_format = ''`
-1. `$before_creator = '&lt;br/&gt;&lt;small&gt;'` 
+1. `$before_creator = '<br/><small>'` 
 1. `$creator = 0`
-1. `$after_creator = '&lt;/small&gt;'`
-1. `$start_items = '&lt;ul class=&quot;mtm&quot;&gt;'` 
-1. `$end_items = '&lt;/ul&gt;'`
-1. `$start_item = '&lt;li&gt;'` 
-1. `$end_item = '&lt;/li&gt;'`
+1. `$after_creator = '</small>'`
+1. `$start_items = '<ul class='mtm'>'` 
+1. `$end_items = '</ul>'`
+1. `$start_item = '<li>'` 
+1. `$end_item = '</li>'`
 1. `$target = 'self'`
 1. `$rel = 'follow'`
 1. `$charsetscan = 0`
 1. `$debug = 0`
-1. `$before_noitems = '&lt;p&gt;'` 
+1. `$before_noitems = '<p>'` 
 1. `$noitems = 'No items, feed is empty.'` 
-1. `$after_noitems = '&lt;/p&gt;'`
-1. `$before_error = '&lt;p&gt;'` 
+1. `$after_noitems = '</p>'`
+1. `$before_error = '<p>'` 
 1. `$error = 'Error: Feed has a error or is not valid'` 
-1. `$after_error = '&lt;/p&gt;'`
+1. `$after_error = '</p>'`
 1. `$paging = 0` 
-1. `$prev_paging_link = '&amp;laquo; Previous'` 
-1. `$next_paging_link = 'Next &amp;raquo;'` 
+1. `$prev_paging_link = '&laquo; Previous'` 
+1. `$next_paging_link = 'Next &raquo;'` 
 1. `$prev_paging_title = 'more items'` 
 1. `$next_paging_title = 'more items'`
 1. `$use_simplepie = 1`
@@ -63,44 +64,45 @@ All params with default-values:
 SHORTCODE-USAGE: 
 
 use the following code in post or pages
-_Example_: [MyTweetMag display=&quot;5&quot; username=&quot;&quot; target=&quot;self&quot;]
+
+_Example_: [MyTweetMag display='5' username='' target='self']
 
 All params with default-values:
 
-1. `'display' =&gt; 5`
-1. `'username' =&gt; ''`
-1. `'before_desc' =&gt; '&lt;br/&gt;'`
-1. `'displaydescriptions' =&gt; 1`
-1. `'after_desc' =&gt; ''`
-1.  `'html' =&gt; 1`
-1. `'truncatedescchar' =&gt; ''`
-1. `'truncatedescstring' =&gt; ' ... '`
-1. `'truncatetitlechar' =&gt; ''`
-1. `'truncatetitlestring' =&gt; ' ... '`
-1. `'before_meta' =&gt; '&lt;br/&gt;&lt;small&gt;'`
-1. `'meta' =&gt; 0`
-1. `'after_meta' =&gt; '&lt;/small&gt;'`
-1. `'start_items' =&gt; '&lt;ul class=&quot;mtm&quot;&gt;'`
-1. `'end_items' =&gt; '&lt;/ul&gt;'`
-1. `'start_item' =&gt; '&lt;li&gt;'`
-1. `'end_item' =&gt; '&lt;/li&gt;'`
-1. `'target' =&gt; 'self'`
-1. `'rel' =&gt; 'follow'`
-1. `'charsetscan' =&gt; 0`
-1. `'debug' =&gt; 0`
-1. `'before_noitems' =&gt; '&lt;p&gt;'`
-1. `'noitems' =&gt; __('No items, feed is empty.', FB_MTM_TEXTDOMAIN)`
-1. `'after_noitems' =&gt; '&lt;/p&gt;'`
-1. `'before_error' =&gt; '&lt;p&gt;'`
-1. `'error' =&gt; __('Error: Feed has a error or is not valid', FB_MTM_TEXTDOMAIN)`
-1. `'after_error' =&gt; '&lt;/p&gt;'`
-1. `'paging' =&gt; 0`
-1. `'prev_paging_link' =&gt; __('&amp;laquo; Previous', FB_MTM_TEXTDOMAIN)`
-1. `'next_paging_link' =&gt; __('Next &amp;raquo;', FB_MTM_TEXTDOMAIN)`
-1. `'prev_paging_title' =&gt; __('more items', FB_MTM_TEXTDOMAIN)`
-1. `'next_paging_title' =&gt; __('more items', FB_MTM_TEXTDOMAIN)`
-1. `'use_simplepie' =&gt; 1`
-1. `'view' =&gt; 0`
+1. `'display' => 5`
+1. `'username' => ''`
+1. `'before_desc' => '<br/>'`
+1. `'displaydescriptions' => 1`
+1. `'after_desc' => ''`
+1.  `'html' => 1`
+1. `'truncatedescchar' => ''`
+1. `'truncatedescstring' => ' ... '`
+1. `'truncatetitlechar' => ''`
+1. `'truncatetitlestring' => ' ... '`
+1. `'before_meta' => '<br/><small>'`
+1. `'meta' => 0`
+1. `'after_meta' => '</small>'`
+1. `'start_items' => '<ul class='mtm'>'`
+1. `'end_items' => '</ul>'`
+1. `'start_item' => '<li>'`
+1. `'end_item' => '</li>'`
+1. `'target' => 'self'`
+1. `'rel' => 'follow'`
+1. `'charsetscan' => 0`
+1. `'debug' => 0`
+1. `'before_noitems' => '<p>'`
+1. `'noitems' => __('No items, feed is empty.', FB_MTM_TEXTDOMAIN)`
+1. `'after_noitems' => '</p>'`
+1. `'before_error' => '<p>'`
+1. `'error' => __('Error: Feed has a error or is not valid', FB_MTM_TEXTDOMAIN)`
+1. `'after_error' => '</p>'`
+1. `'paging' => 0`
+1. `'prev_paging_link' => __('&laquo; Previous', FB_MTM_TEXTDOMAIN)`
+1. `'next_paging_link' => __('Next &raquo;', FB_MTM_TEXTDOMAIN)`
+1. `'prev_paging_title' => __('more items', FB_MTM_TEXTDOMAIN)`
+1. `'next_paging_title' => __('more items', FB_MTM_TEXTDOMAIN)`
+1. `'use_simplepie' => 1`
+1. `'view' => 0`
  
 == Installation ==
 
